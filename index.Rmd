@@ -1,0 +1,15 @@
+---
+title: "오픈 통계 팩키지 프로젝트"
+description: |
+  Tidyverse Korea 커뮤니티와 함께 오픈 통계 팩키지 개발 프로젝트를 통해 더 나은 세상을 함께 만들어가요!!!
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+```
+

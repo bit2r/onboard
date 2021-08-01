@@ -1,0 +1,13 @@
+name: "r2bit"
+title: "Open UP On-Boarding"
+description: |
+  My Website
+output_dir: "docs"
+google_analytics: "UA-xxxxxxx"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: distill::distill_article

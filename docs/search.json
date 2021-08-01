@@ -1,0 +1,21 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-08-01T11:21:30+09:00"
+    },
+    {
+      "path": "index.html",
+      "title": "오픈 통계 팩키지 프로젝트",
+      "description": "Tidyverse Korea 커뮤니티와 함께 오픈 통계 팩키지 개발 프로젝트를 통해 더 나은 세상을 함께 만들어가요!!!\n",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-08-01T11:21:31+09:00"
+    }
+  ],
+  "collections": []
+}
