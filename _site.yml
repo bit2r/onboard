@@ -3,6 +3,7 @@ title: "Open UP On-Boarding"
 description: |
   My Website
 output_dir: "docs"
+theme: theme.css
 google_analytics: "G-JM6EC4CS4N"
 navbar:
   right:

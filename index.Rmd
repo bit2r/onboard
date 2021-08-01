@@ -13,3 +13,38 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
+
+# On-Boarding 들어가며
+
+- 한국 R 컨퍼런스: [link](https://use-r.kr/) 
+- Facebook Group: [link](https://www.facebook.com/groups/tidyverse)
+- Youtube Channel: [link](https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw)
+- **Seoul R Meetup**: [link](https://www.meetup.com/seoul-r-meetup)
+  - Global R Meetup: [link](https://benubah.github.io/r-community-explorer/rugs.html)
+  - Tidyverse Seoul R Meetup: [link](https://tidyverse-korea.github.io/seoul-R/)
+- Shiny Seoul Meetup: [link](https://github.com/shinykorea/Meetup)
+
+# 멘토
+
+- [Choonghyun Ryu, 유충현](https://github.com/choonghyunryu)
+- [Kwangchun Lee, 이광춘](https://github.com/statkclee)
+- [Seonghak Hong, 홍성학](https://github.com/euriion)
+
+# On-Boarding 공유 지식
+
+1. Git/GitHub
+    - [OSS OpenUP](https://www.oss.kr/open_up_intro)
+    - [소프트웨어 카펜트리 Git](http://statkclee.github.io/git-novice/index-kr.html)
+1. R마크다운
+    - [데이터 과학 문서](https://statkclee.github.io/comp_document/)
+    - [R 사용자회 Hands-On](https://festa.io/)
+1. 데이터 팩키지
+    - [R 팩키지 - RMDD (RMarkdown Driven Development)](https://statkclee.github.io/pkg/)
+    - [`kodlookr`](https://github.com/bit2r/kodlookr)
+    - [`krvotes` 대한민국 선거 데이터](https://github.com/statkclee/krvotes)
+
+
+
+
+
+
