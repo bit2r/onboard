@@ -6,15 +6,15 @@
       "description": "멘티 X 멘토 함께 오픈 통계 팩키지를 만들어 갑니다.",
       "author": [],
       "contents": "\n오픈 통계 팩키지\n오픈 통계 팩키지 개발 안내서\n프로젝트 개요\n코로나19로 인해 심화된 디지털 불평등과 디지털 경제 전환(Digital Transformation)으로 인해 시민의 필수 역량이 된 Data Literacy 역량 강화를 위해 컴퓨터를 처음 접하거나 데이터 작업이 처음인 대한민국 국민 누구나 쉽게 통계 팩키지를 접할 수 있도록 하고 데이터 프로그래밍 역량도 수준별로 강화할 수 있도록 새로운 형태의 블록 통계 분석을 포함한 초중등 오픈 통계 팩키지 개발을 금번 컨트리뷰션 아카데미 프로그램을 빌어 Tidyverse Korea 멘토와 멘티가 함께 2021년 새로운 여행을 함께 떠나가고자 합니다.\n기대 효과\n프로젝트 멘티의 기대 효과\nR/Shiny로 동적 웹 애플리케이션을 개발할 수 있는 방법을 터득합니다.\n자신만의 R 패키지를 개발하고, Github과 CRAN에 등록할 수 있습니다.\n통계 패키지의 동작 방법을 이해할 수 있습니다.\n\n프로젝트 멘티의 오픈소스 생태계 기여\n오픈통계 패키지 프레임워크 개발 참여로, 오픈통계 패키지 기틀 마련에 기여합니다.\n영문 패키지 도움말의 한글화로, 국내 사용자의 패키지 활용도 제고에 기여합니다.\n\ntidyblocks\nTidy Blocks 한글화 지원 : https://github.com/tidyblocks/tidyblocks/\nTidy Blocks 블록 통계 프로그래밍 안내서 한글 번역: https://tidyblocks.tech/en/guide/\n한글 사례(Example) 추가 및 확대 : https://tidyblocks.tech/en/examples/\n글로벌 실전 dlookr 팩키지 CRAN 한글화\ndlookr 패키지의 사용자 가이드 한글화\nhttps://github.com/choonghyunryu/dlookr\nhttps://choonghyunryu.github.io/dlookr/\n\n소품(Vignettes)\nIntroduce dlookr, Data Diagnosis, EDA, Data Transformation\nhttps://github.com/choonghyunryu/dlookr/tree/master/vignettes\n\n도움말(Manpages)\n목록 : https://choonghyunryu.github.io/dlookr/reference/index.html\n소스 : https://github.com/choonghyunryu/dlookr/tree/master/man\n\n오픈 통계 패키지 R/Shiny 개발\n초중등 통계 교육 및 Data Literacy 향상을 위한 R/Shiny 앱 개발\n초중등 통계 교육에 필요한 기능 식별\nShiny UI 설계/구현\nShiny server 로직 설계/구현\n참고: 통그라미\n한국 R 컨퍼런스 발표\n발표자\n정규 프로그램\n\n\n\n",
-      "last_modified": "2021-08-02T10:45:09+09:00"
+      "last_modified": "2021-08-03T13:51:31+09:00"
     },
     {
       "path": "index.html",
       "title": "오픈 통계 팩키지 프로젝트",
       "description": "Tidyverse Korea 커뮤니티와 함께 오픈 통계 팩키지 개발 프로젝트를 통해 더 나은 세상을 함께 만들어가요!!!\n",
       "author": [],
-      "contents": "\nOn-Boarding 들어가며\n한국 R 컨퍼런스: link\nFacebook Group: link\nYoutube Channel: link\nSeoul R Meetup: link\nGlobal R Meetup: link\nTidyverse Seoul R Meetup: link\n\n멘토\nChoonghyun Ryu, 유충현\nKwangchun Lee, 이광춘\nSeonghak Hong, 홍성학\nOn-Boarding 공유 지식\nGit/GitHub\n개념: 소프트웨어 카펜트리 Git\n현업: OSS OpenUP\n\nR마크다운\n데이터 과학 문서\nR 사용자회 Hands-On\n\n데이터 팩키지\nR 팩키지 - RMDD (RMarkdown Driven Development)\nkodlookr\nkrvotes 대한민국 선거 데이터\n\nShiny (웹앱)\nGit/GitHub\n기본\n\n\nknitr::include_graphics(\"data/오픈소스 참여를 위한 Git _ GitHub 기본.pdf\")\n\n\n\n고급\n\n\nknitr::include_graphics(\"data/오픈소스 협업를 위한 Git _ GitHub 고급.pdf\")\n\n\n\n\n\n\n",
-      "last_modified": "2021-08-02T10:45:10+09:00"
+      "contents": "\nOn-Boarding 들어가며\n한국 R 컨퍼런스: link\nFacebook Group: link\nYoutube Channel: link\nSeoul R Meetup: link\nGlobal R Meetup: link\nTidyverse Seoul R Meetup: link\n\n멘토\nChoonghyun Ryu, 유충현\nKwangchun Lee, 이광춘\nSeonghak Hong, 홍성학\nOn-Boarding 공유 지식\nGit/GitHub\n개념: 소프트웨어 카펜트리 Git\n현업: OSS OpenUP\n\nR마크다운\n데이터 과학 문서\nR 사용자회 Hands-On\n\n데이터 팩키지\nR 팩키지 - RMDD (RMarkdown Driven Development)\nkodlookr\nkodlookr 개발 가이드\nkrvotes 대한민국 선거 데이터\n\nShiny (웹앱)\nGit/GitHub\n기본\n\n\nknitr::include_graphics(\"data/오픈소스 참여를 위한 Git _ GitHub 기본.pdf\")\n\n\n\n고급\n\n\nknitr::include_graphics(\"data/오픈소스 협업를 위한 Git _ GitHub 고급.pdf\")\n\n\n\n\n\n\n",
+      "last_modified": "2021-08-03T14:22:07+09:00"
     }
   ],
   "collections": []

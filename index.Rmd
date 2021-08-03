@@ -48,6 +48,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
     -   [R 팩키지 - RMDD (RMarkdown Driven Development)](https://statkclee.github.io/pkg/)
     -   [`kodlookr`](https://github.com/bit2r/kodlookr)
+    -   [`kodlookr 개발 가이드`](https://choonghyunryu.github.io/about_package)    
     -   [`krvotes` 대한민국 선거 데이터](https://github.com/statkclee/krvotes)
 
 4.  Shiny (웹앱)
