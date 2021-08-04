@@ -11,4 +11,6 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Tong"
+      href: tong.html
 output: distill::distill_article

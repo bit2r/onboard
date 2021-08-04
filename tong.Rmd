@@ -1,0 +1,61 @@
+---
+title: "한국 통계 팩키지"
+description: |
+  한국 통계 팩키지에 대해 한곳에 모아 정리합니다
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# 통계교육 재능기부단 {#통계청-재능기부단}
+
+[통계교육 재능기부단](https://stat-gibu.co.kr/)
+
+# 실용통계 {#실용통계-교과서}
+
+빅데이터 시대 통계 리터러시 함양을 목적으로 개발된 "실용통계" 도서가 고등학교 교과로 인정되어 2020년부터 일선 학교에 보급한다고 발표하였다. 통계교육이 기계적 학습의 통계수업에서 "통계적 사고와 문제해결 과정을 경험하는 참여형 실용 통계교육"으로 개편됨에 따라, 문제해결에 있어 비판적 사고의 통계적 소양 능력을 키울 수 있도록 실용 통계교육의 교재 개발을 추진하였다.
+
+-   [통계청, "실용통계 도서가 고교의 교과용 도서로 인정"](http://kostat.go.kr/portal/korea/kor_nw/1/1/index.board?bmode=read&aSeq=380703)
+
+# 전국통계교육교사모임 {#전국통계교육교사모임}
+
+-   [밴드 전국통계교육교사모임](https://band.us/band/76297188)
+
+# 고등학교 통계교육 문제점 {#high-school-stat-problem}
+
+![](data/kss-school-stat-04-2-05.pdf)
+
+- ~~[어린이 통계동산](http://kostat.go.kr/kids)~~
+- 통계청, [통계교육원](http://sti.kostat.go.kr) 
+- ~~[e-러닝센터 홈페이지](http://elearn.nso.go.kr)~~
+- 한국통계진흥원, [센서스앳스쿨](http://censusatschool.or.kr)
+
+# 통계 소프트웨어 (2007) {#stat-software}
+
+## 통계 팩키지 비치 {#stat-pkg-2007}
+
+```{r stat-pkg-2007}
+library(tidyverse)
+
+stat_pkg_tbl <- tribble(~"소프트웨어명", ~"SAS", ~"SPSS", ~"Minitab", ~"EXCEL", ~"S-Link", ~"기타",
+                        "학교수", 0, 0, 0, 15, 0, 2)
+
+stat_pkg_tbl %>% 
+  knitr::kable()
+```
+
+## 통계 팩키지 활용 교사수 {#stat-pkg-teacher-2007}
+
+
+```{r stat-pkg-teacher-2007}
+teacher_pkg_tbl <- 
+  tribble(~"소프트웨어명", ~"SAS", ~"SPSS", ~"Minitab", ~"EXCEL", ~"S-Link", ~"기타",
+          "학교수", 0, 0, 0, 10, 1, 0)
+
+teacher_pkg_tbl %>% 
+  knitr::kable()
+```
+
