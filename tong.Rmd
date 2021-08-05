@@ -37,6 +37,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## 통계 팩키지 비치 {#stat-pkg-2007}
 
+소프트웨어 비치 현황, 대상학교 : **15** 개교
+
 ```{r stat-pkg-2007}
 library(tidyverse)
 
@@ -49,6 +51,7 @@ stat_pkg_tbl %>%
 
 ## 통계 팩키지 활용 교사수 {#stat-pkg-teacher-2007}
 
+수업에 활용 가능한 교사수, 대상인원 : **39** 명
 
 ```{r stat-pkg-teacher-2007}
 teacher_pkg_tbl <- 
@@ -59,3 +62,47 @@ teacher_pkg_tbl %>%
   knitr::kable()
 ```
 
+
+# 소프트웨어 현황 {#software-facts}
+
+공학도구 활용 실태 조사 결과 (한국과학창의재단, 2018)
+
+- 전국 총 5,781 개교
+    - 초: 2,963 개교
+    - 중: 1,690 개교
+    - 고: 1,128 개교
+
+```{r software-survey-data, eval = FALSE}
+library(tidyverse)
+library(tabulizer)
+
+survy_raw <- 
+  tabulizer::extract_areas(file = "data/특별위원회세션_2015개정+교육과정과+통계교육의+방향_이화영.pdf", page=5)
+
+survey_tbl <- survy_raw %>% 
+  .[[1]] %>% 
+  as_tibble() %>% 
+  set_names(c("구분", "초등", "초등비율", "중등", "중등비율", "고등", "고등비율")) %>% 
+  select(!contains("비율")) %>% 
+  pivot_longer(cols = 초등:고등, names_to = "초중고", values_to = "학교수") %>% 
+  mutate(학교수 = as.integer(학교수)) 
+
+survey_tbl %>% 
+  write_rds("data/survey_tbl.rds")
+```
+
+
+```{r software-survey-data-clean, eval = TRUE}
+library(tidyverse)
+library(gt)
+
+survey_tbl <- 
+  read_rds("data/survey_tbl.rds")
+
+survey_tbl %>% 
+  pivot_wider(names_from = 초중고, values_from = 학교수) %>% 
+  filter(구분 != "코딩프로그램") %>% 
+  mutate(구분 = ifelse(str_detect(구분, "스크래치"), "코딩프로그램(스크래치, 엔트리, LOGO등)", 구분)) %>% 
+  gt()
+
+```
