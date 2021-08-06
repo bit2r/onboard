@@ -10,28 +10,148 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# 통계교육 재능기부단 {#통계청-재능기부단}
+# 공학 소프트웨어 현황 {#software-facts}
 
-[통계교육 재능기부단](https://stat-gibu.co.kr/)
+현재 사용중인 소프트웨어 목록을 통계와 수학, 국산과 외산 소프트웨어를 정리하여 일별하면 다음과 같다.
 
-# 실용통계 {#실용통계-교과서}
 
-빅데이터 시대 통계 리터러시 함양을 목적으로 개발된 "실용통계" 도서가 고등학교 교과로 인정되어 2020년부터 일선 학교에 보급한다고 발표하였다. 통계교육이 기계적 학습의 통계수업에서 "통계적 사고와 문제해결 과정을 경험하는 참여형 실용 통계교육"으로 개편됨에 따라, 문제해결에 있어 비판적 사고의 통계적 소양 능력을 키울 수 있도록 실용 통계교육의 교재 개발을 추진하였다.
+```{r engineering-software}
+library(tidyverse)
+library(gt)
 
--   [통계청, "실용통계 도서가 고교의 교과용 도서로 인정"](http://kostat.go.kr/portal/korea/kor_nw/1/1/index.board?bmode=read&aSeq=380703)
+eng_tbl <- tribble(~"구분", ~"국적", ~"명칭", ~"웹주소", ~"제작사", ~"가격", ~"비고",
+                  "통계", "한국", "이지통계", "https://ebsmath.co.kr/easyTong", "EBS MATH", "무료", "",
+                  "통계",  "한국", "통그라미", "https://tong.kostat.go.kr/", "통계청, 통계교육원", "무료", "",
+                  "수학", "외국", "GrafEq", "http://www.peda.com/", "Pedagouery Software Inc", "상용", "",
+                  "수학",  "외국", "Fathom", "https://www.fathomhq.com/", "Fathom", "상용", "",
+                  "수학",  "외국",  "지오지브라", "https://www.geogebra.org/", "GeoGebra", "무료", "",
+                  "수학",  "외국",  "GSP5", "https://www.dynamicgeometry.com/", "McGraw-Hill", "상용", "단종 2019",
+                  "수학",  "외국",  "Cabri Geometry", "https://www.cabri.com/en/", "Cabrilog", "상용", "유럽",
+                  "수학",  "외국",  "Desmos", "https://www.desmos.com/", "Desmos", "상용", "자바스크립트, 스타트업",
+                  "수학",  "한국", "알지오매스", "https://www.algeomath.kr/", "한국과학창의재단", "무료",  "",
+                  "수학",  "외국",  "메이플", "https://www.maplesoft.com/products/maple/", "MapleSoft", "상용",  "",
+                  "수학",  "외국",  "매스매티카", "https://www.wolfram.com/mathematica/", "Wolfram", "상용", "",
+                  "수학",  "외국",  "Octave", "https://www.gnu.org/software/octave/", "존 W. 이튼", "무료", "GNU GPL",
+                  "통계", "외국", "SAS", "https://www.sas.com/ko_kr/home.html", "SAS 인스티튜트", "상용", "",
+                  "통계", "외국", "IBM SPSS", "https://www.ibm.com/products/spss-statistics", "SPSS Inc.", "상용", "IBM 인수 2009년",
+                  "통계", "미국", "Minitab", "https://www.minitab.com/ko-kr/", "Minitab, Inc.", "상용", "")
 
-# 전국통계교육교사모임 {#전국통계교육교사모임}
+eng_tbl %>% 
+  mutate(
+    웹주소 = map(웹주소, ~ htmltools::a(href = .x, "웹사이트")),
+    웹주소 = map(웹주소, ~ gt::html(as.character(.x)))) %>% 
+  arrange(desc(구분)) %>% 
+  gt() %>% 
+    cols_align(
+      align = "center",
+      columns = c(명칭, 제작사)
+  ) %>% 
+  tab_header(
+    title = md("**통계/수학 소프트웨어 현황** "),
+    subtitle = md("R 사용자회 (2021)")
+  ) %>% 
+  tab_options(
+    heading.background.color = "#756bb1",
+    column_labels.background.color = "#bcbddc",
+    column_labels.font.weight = "bold",
+    stub.background.color = "#bcbddc",
+    stub.font.weight = "bold"
+  ) %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "#f5cb42"),
+      cell_text(weight = "bold")
+      ),
+    locations = cells_body(
+      rows = 구분 == '통계')
+  ) %>% 
+  tab_footnote(
+    locations = cells_body(columns = 명칭, rows = 명칭 == "GSP5"),
+    footnote = md("GSP5: Geometer’s Sketchpad")
+  )
 
--   [밴드 전국통계교육교사모임](https://band.us/band/76297188)
+```
 
-# 고등학교 통계교육 문제점 {#high-school-stat-problem}
+# 공학 소프트웨어 실태조사 {#software-facts}
 
-![](data/kss-school-stat-04-2-05.pdf)
+공학도구 활용 실태 조사 결과 (한국과학창의재단, 2018)
 
-- ~~[어린이 통계동산](http://kostat.go.kr/kids)~~
-- 통계청, [통계교육원](http://sti.kostat.go.kr) 
-- ~~[e-러닝센터 홈페이지](http://elearn.nso.go.kr)~~
-- 한국통계진흥원, [센서스앳스쿨](http://censusatschool.or.kr)
+- 전국 총 5,781 개교
+    - 초: 2,963 개교
+    - 중: 1,690 개교
+    - 고: 1,128 개교
+
+```{r software-survey-data, eval = FALSE}
+library(tidyverse)
+library(tabulizer)
+
+survy_raw <- 
+  tabulizer::extract_areas(file = "data/특별위원회세션_2015개정+교육과정과+통계교육의+방향_이화영.pdf", page=5)
+
+survey_tbl <- survy_raw %>% 
+  .[[1]] %>% 
+  as_tibble() %>% 
+  set_names(c("구분", "초등", "초등비율", "중등", "중등비율", "고등", "고등비율")) %>% 
+  select(!contains("비율")) %>% 
+  pivot_longer(cols = 초등:고등, names_to = "초중고", values_to = "학교수") %>% 
+  mutate(학교수 = as.integer(학교수)) 
+
+survey_tbl %>% 
+  write_rds("data/survey_tbl.rds")
+```
+
+```{r software-survey-data-clean, eval = TRUE}
+library(tidyverse)
+library(gt)
+
+survey_tbl <- 
+  read_rds("data/survey_tbl.rds")
+
+survey_tbl %>% 
+  pivot_wider(names_from = 초중고, values_from = 학교수) %>% 
+  filter(구분 != "코딩프로그램") %>% 
+  mutate(구분 = ifelse(str_detect(구분, "스크래치"), "코딩프로그램", 구분),
+         구분 = ifelse(str_detect(구분, "그래프"), "그래프 프로그램", 구분),   
+         구분 = ifelse(str_detect(구분, "스프레드시트"), "스프레드시트형", 구분)) %>% 
+  gt() %>% 
+  tab_header(
+    title = md("**공학용 도구 소프트웨어 실태 조사** "),
+    subtitle = md("한국과학창의재단(2018)")
+  ) %>% 
+  tab_options(
+    heading.background.color = "#756bb1",
+    column_labels.background.color = "#bcbddc",
+    column_labels.font.weight = "bold",
+    stub.background.color = "#bcbddc",
+    stub.font.weight = "bold"
+  ) %>% 
+  tab_footnote(
+    locations = cells_body(columns = 구분, rows = 구분 == "코딩프로그램"),
+    footnote = md("스크래치, 러플, 리보그, 엔트리, LOGO 등")
+  ) %>% 
+  tab_footnote(
+    locations = cells_body(columns = 구분, rows = 구분 == "그래프 프로그램"),
+    footnote = md("GrafEq 등")
+  )  %>% 
+  tab_footnote(
+    locations = cells_body(columns = 구분, rows = 구분 == "스프레드시트형"),
+    footnote = md("엑셀, 구글 쉬트, 애플 넘버즈 등")
+  )  %>%   
+  tab_spanner(
+    label = "초중등학교",
+    columns = c(초등, 중등, 고등)
+  ) %>% 
+  cols_align(
+    align = "center",
+    columns = c(구분)) %>% 
+  fmt_number(
+    columns = c(초등, 중등, 고등),
+    decimals = 0,
+    sep_mark = ","
+  )  
+  
+```
+
 
 # 통계 소프트웨어 (2007) {#stat-software}
 
@@ -63,46 +183,30 @@ teacher_pkg_tbl %>%
 ```
 
 
-# 소프트웨어 현황 {#software-facts}
-
-공학도구 활용 실태 조사 결과 (한국과학창의재단, 2018)
-
-- 전국 총 5,781 개교
-    - 초: 2,963 개교
-    - 중: 1,690 개교
-    - 고: 1,128 개교
-
-```{r software-survey-data, eval = FALSE}
-library(tidyverse)
-library(tabulizer)
-
-survy_raw <- 
-  tabulizer::extract_areas(file = "data/특별위원회세션_2015개정+교육과정과+통계교육의+방향_이화영.pdf", page=5)
-
-survey_tbl <- survy_raw %>% 
-  .[[1]] %>% 
-  as_tibble() %>% 
-  set_names(c("구분", "초등", "초등비율", "중등", "중등비율", "고등", "고등비율")) %>% 
-  select(!contains("비율")) %>% 
-  pivot_longer(cols = 초등:고등, names_to = "초중고", values_to = "학교수") %>% 
-  mutate(학교수 = as.integer(학교수)) 
-
-survey_tbl %>% 
-  write_rds("data/survey_tbl.rds")
-```
+# 활성화 활동 {#실용통계-교과서}
 
 
-```{r software-survey-data-clean, eval = TRUE}
-library(tidyverse)
-library(gt)
+## 통계교육 재능기부단 {#통계청-재능기부단}
 
-survey_tbl <- 
-  read_rds("data/survey_tbl.rds")
+[통계교육 재능기부단](https://stat-gibu.co.kr/)
 
-survey_tbl %>% 
-  pivot_wider(names_from = 초중고, values_from = 학교수) %>% 
-  filter(구분 != "코딩프로그램") %>% 
-  mutate(구분 = ifelse(str_detect(구분, "스크래치"), "코딩프로그램(스크래치, 엔트리, LOGO등)", 구분)) %>% 
-  gt()
+## 실용통계 {#실용통계-교과서}
 
-```
+빅데이터 시대 통계 리터러시 함양을 목적으로 개발된 "실용통계" 도서가 고등학교 교과로 인정되어 2020년부터 일선 학교에 보급한다고 발표하였다. 통계교육이 기계적 학습의 통계수업에서 "통계적 사고와 문제해결 과정을 경험하는 참여형 실용 통계교육"으로 개편됨에 따라, 문제해결에 있어 비판적 사고의 통계적 소양 능력을 키울 수 있도록 실용 통계교육의 교재 개발을 추진하였다.
+
+-   [통계청, "실용통계 도서가 고교의 교과용 도서로 인정"](http://kostat.go.kr/portal/korea/kor_nw/1/1/index.board?bmode=read&aSeq=380703)
+
+## 전국통계교육교사모임 {#전국통계교육교사모임}
+
+-   [밴드 전국통계교육교사모임](https://band.us/band/76297188)
+
+## 통계진흥 웹사이트 {#high-school-stat-problem}
+
+- ~~[어린이 통계동산](http://kostat.go.kr/kids)~~
+- 통계청, [통계교육원](http://sti.kostat.go.kr) 
+- ~~[e-러닝센터 홈페이지](http://elearn.nso.go.kr)~~
+- 한국통계진흥원, [센서스앳스쿨](http://censusatschool.or.kr)
+
+
+
+
