@@ -34,9 +34,10 @@ eng_tbl <- tribble(~"구분", ~"국적", ~"명칭", ~"웹주소", ~"제작사", 
                   "수학",  "외국",  "Octave", "https://www.gnu.org/software/octave/", "존 W. 이튼", "무료", "GNU GPL",
                   "통계", "외국", "SAS", "https://www.sas.com/ko_kr/home.html", "SAS 인스티튜트", "상용", "",
                   "통계", "외국", "IBM SPSS", "https://www.ibm.com/products/spss-statistics", "SPSS Inc.", "상용", "IBM 인수 2009년",
-                  "통계", "미국", "Minitab", "https://www.minitab.com/ko-kr/", "Minitab, Inc.", "상용", "")
+                  "통계", "미국", "Minitab", "https://www.minitab.com/ko-kr/", "Minitab, Inc.", "상용", "",
+                  "통계", "한국", "eStat", "http://estat.me/", "이정진", "무료", "숭실대 이정진 교수 제작")
 
-eng_tbl %>% 
+eng_tbl_gt <- eng_tbl %>% 
   mutate(
     웹주소 = map(웹주소, ~ htmltools::a(href = .x, "웹사이트")),
     웹주소 = map(웹주소, ~ gt::html(as.character(.x)))) %>% 
@@ -69,6 +70,11 @@ eng_tbl %>%
     locations = cells_body(columns = 명칭, rows = 명칭 == "GSP5"),
     footnote = md("GSP5: Geometer’s Sketchpad")
   )
+
+eng_tbl_gt
+
+eng_tbl_gt %>% 
+  gtsave("stat_eng_software.png", path = "fig")
 
 ```
 
