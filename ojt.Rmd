@@ -1,0 +1,44 @@
+---
+title: "오픈 통계 팩키지 OJT"
+description: |
+  오픈 통계 팩키지 개발 멘티 10분을 모시고 OJT 교육 실시 합니다.
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# 들어가며 {#intro}
+
+- 일시: 2021-08-14 10:00 ~
+- 장소: Zoom
+- 강사: 이광춘, 유충현, 홍성학
+- 강의내용
+    - R 팩키지
+    - R 마크다운
+    - R Shiny
+
+# OJT 튜토리얼 참가
+
+- [Zoom 회의 참가](https://yonsei.zoom.us/j/82629611307?pwd=ODdPU2o2OHdMVVRDaDZBVE94bTdjdz09)
+    - 암호: 멘티 슬랙 채널에 공유
+
+# R 팩키지 {#pkg}
+
+# R 마크다운 {#rmarkdown}
+
+- [현대적인 과학논문 저작](http://statkclee.github.io/modern-scientific-authoring/index-kr.html)
+    - R 마크다운: 문서와 코드의 만남
+    - [R마크다운 Cheat Sheet](https://statkclee.github.io/comp_document/rmarkdown-in-production.html)
+- [Computational Documents](https://statkclee.github.io/comp_document/cd-netlify.html)
+- [research compendia](https://statkclee.github.io/comp_document/cd_compendium.html): 문서와 팩키지의 만남
+- [Hands-on 워크샵](https://festa.io/events/1726)
+
+
+
+# R Shiny {#shiny}
+
+
+
