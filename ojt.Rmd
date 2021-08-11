@@ -36,9 +36,6 @@ knitr::opts_chunk$set(echo = FALSE)
 - [research compendia](https://statkclee.github.io/comp_document/cd_compendium.html): 문서와 팩키지의 만남
 - [Hands-on 워크샵](https://festa.io/events/1726)
 
-
-
 # R Shiny {#shiny}
 
-
-
+- [RShiny 소개](https://aidenhong.com/presentations/shiny-introduction/shiny-introduction.html#1)
