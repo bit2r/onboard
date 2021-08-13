@@ -26,6 +26,9 @@ knitr::opts_chunk$set(echo = FALSE)
     - 암호: 멘티 슬랙 채널에 공유
 
 # R 팩키지 {#pkg}
+- [R 팩키지 개발](https://choonghyunryu.github.io/intro_package/Rpackage.html)
+- [CRAN Submit 하기](https://choonghyunryu.github.io/intro_package/submit.html)
+- [kodlookr 개발 가이드](https://choonghyunryu.github.io/about_package)  
 
 # R 마크다운 {#rmarkdown}
 
